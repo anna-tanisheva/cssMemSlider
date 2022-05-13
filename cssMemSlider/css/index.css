@@ -47,33 +47,34 @@ input[type=radio] {
 }
 
 .slider {
+  height: 100%;
   grid-row: 2 / 3;
   grid-column: 4 / 10;
   overflow: hidden;
   border: 1px solid black;
   display: flex;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 70% 20% 10%;
 }
 
 .slides {
   display: flex;
-  margin-left: -9%;
   width: 400%;
+  margin-left: 0;
 }
 
 .slide {
   width: 25%;
   transition: all 1s ease;
-  margin: 0 1%;
   display: flex;
+  min-width: fit-content;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
 }
 
-.slide .img {
-  width: 100%;
-  height: 100%;
+
+.slide img {
+  width: auto;
+  height: 80%;
+  object-fit: fill;
 }
 
 .caption-container {
@@ -96,17 +97,28 @@ input[type=radio] {
 .control-panel {
   display: flex;
   grid-row: 3 / 4;
-  grid-column: 9 / 10;
+  grid-column: 8 / 10;
 }
 
 .control {
   display: flex;
-  width: 20%;
-  height: 60%;
-  margin: 6px;
+  width: 30%;
+  height: 20%;
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  background-color: rgba(127, 255, 212, 0.5);
   transition: all .4s ease;
+}
+
+.control:hover {}
+
+.inner-control {
+  width: 40%;
+  height: 40%;
+  background-color: rebeccapurple;
+  border-radius: 50%;
 }
 
 #button-1:checked~.slider .slides .slide-1 {
