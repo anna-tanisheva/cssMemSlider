@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
+  color: rgb(43, 37, 37);
 }
 
 .container {
@@ -76,7 +77,8 @@ input[type=radio] {
   grid-row: 2 / 3;
   grid-column: 4 / 10;
   overflow: hidden;
-  border: 1px solid black;
+  border: 1px solid rgb(43, 37, 37);
+  border-radius: 1%;
   display: flex;
 }
 
@@ -113,7 +115,7 @@ input[type=radio] {
   display: flex;
   width: 400%;
   transition: all 1s ease;
-
+  padding-top: 1%;
 }
 
 .slide-caption {
@@ -271,4 +273,72 @@ input[type=radio] {
   height: 80%;
   width: 100%;
   object-fit: contain;
+}
+
+/* Media queries */
+
+@media (width: 375px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  .container {
+    padding: 0 3%;
+    flex-basis: 99%;
+    max-width: 99%;
+  }
+
+  .header .container {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1%;
+  }
+
+  .header,
+  .footer {
+    height: 15%;
+  }
+
+  .main {
+    height: calc(100vh - 30%);
+  }
+
+  .disclaimer {
+    text-align: center;
+  }
+
+  .main .container {
+    grid-template-rows: 5% 1fr 10% 20%;
+  }
+
+  .slider {
+    grid-column: 1 / 13;
+  }
+
+  .caption-container {
+    grid-column: 1 / 13;
+    grid-row: 4 / 5;
+  }
+
+  .control-panel {
+    grid-column: 4 / 10;
+    grid-row: 3 / 4;
+  }
+
+  .control {
+    height: 55.6%;
+  }
+
+  .slide-caption {
+    padding-left: 0;
+    font-size: 1.1rem;
+  }
+
+  .footer .container {
+    height: 100%;
+  }
+
+  .footer-git {
+    flex-basis: 61%;
+  }
 }
