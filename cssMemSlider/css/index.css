@@ -77,7 +77,7 @@ input[type=radio] {
   grid-row: 2 / 3;
   grid-column: 4 / 10;
   overflow: hidden;
-  border: 1px solid rgb(43, 37, 37);
+  border: thin solid rgb(43, 37, 37);
   border-radius: 1%;
   display: flex;
 }
@@ -147,7 +147,7 @@ input[type=radio] {
   width: 40%;
   height: 40%;
   background-color: rgb(53, 87, 132);
-  border: 2px solid rgb(26, 42, 112);
+  border: thin solid rgb(26, 42, 112);
   border-radius: 50%;
   transition: all .4s ease;
 }
