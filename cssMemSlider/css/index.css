@@ -163,7 +163,7 @@ input[type=radio] {
 }
 
 /* styles for current label */
-#button-1:checked ~ .control-panel label[for="button-1"] .inner-control {
+#button-1:checked ~ .control-panel .inner-control label[for="button-1"] {
   background-color: transparent;
 }
 
