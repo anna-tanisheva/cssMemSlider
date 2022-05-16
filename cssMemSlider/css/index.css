@@ -1,0 +1,404 @@
+/* 1920 x 937
+375 x 667 */
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(43, 37, 37);
+}
+
+.container {
+  display: flex;
+  max-width: 70.85%;
+  margin: auto;
+  padding: 0 3%;
+  flex-basis: 70.85%;
+}
+
+.header,
+.footer {
+  height: 10%;
+  background-color: rgb(151, 151, 144);
+}
+
+/* header */
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header {
+  margin: 0;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  flex-basis: 80%;
+}
+
+/* main */
+
+.main {
+  height: calc(100vh - 20%);
+  background-color: rgb(240, 240, 240);
+  /* flex: 1 0 auto; */
+}
+
+.main .container {
+  display: grid;
+  grid-template-rows: 20% 1fr 20%;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 1%;
+  height: 100%;
+}
+
+input[type=radio] {
+  visibility: hidden;
+}
+
+.slider {
+  height: 100%;
+  grid-row: 2 / 3;
+  grid-column: 4 / 10;
+  overflow: hidden;
+  border: thin solid rgb(43, 37, 37);
+  border-radius: 1%;
+  display: flex;
+}
+
+.slides {
+  display: flex;
+  width: 400%;
+  margin-left: 0;
+  transition: all 1s ease;
+}
+
+.slide {
+  width: 25%;
+  transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.slide img {
+  min-width: 100%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.caption-container {
+  width: 100%;
+  grid-row: 3 / 4;
+  grid-column: 4 / 8;
+  overflow: hidden;
+}
+
+.caption {
+  display: flex;
+  width: 400%;
+  transition: all 1s ease;
+  padding-top: 1%;
+}
+
+.slide-caption {
+  width: 25%;
+  transition: all 1s ease;
+  display: flex;
+  align-items: center;
+}
+
+.control-panel {
+  display: flex;
+  grid-row: 3 / 4;
+  grid-column: 8 / 10;
+}
+
+.control {
+  display: flex;
+  width: 30%;
+  height: 20%;
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .4s ease;
+}
+
+.inner-control {
+  width: 40%;
+  height: 40%;
+  background-color: rgb(53, 87, 132);
+  border: thin solid rgb(26, 42, 112);
+  border-radius: 50%;
+  transition: all .4s ease;
+}
+
+/* hover state */
+.control:hover .inner-control {
+  background-color: rgb(177, 216, 214);
+}
+
+/* press(active)-state */
+.control:active .inner-control {
+  background-color: rgb(138, 185, 183);
+}
+
+/* styles for current label */
+#button-1:checked ~ .control-panel label[for="button-1"] .inner-control {
+  background-color: transparent;
+}
+
+#button-2:checked ~ .control-panel label[for="button-2"] .inner-control {
+  background-color: transparent;
+}
+
+#button-3:checked ~ .control-panel label[for="button-3"] .inner-control {
+  background-color: transparent;
+}
+
+#button-4:checked ~ .control-panel label[for="button-4"] .inner-control {
+  background-color: transparent;
+}
+
+/* hover styles for current label */
+#button-1:checked ~ .control-panel label[for="button-1"]:hover .inner-control {
+  border-color: rgb(177, 216, 214);
+}
+
+#button-2:checked ~ .control-panel label[for="button-2"]:hover .inner-control {
+  border-color: rgb(177, 216, 214);
+}
+
+#button-3:checked ~ .control-panel label[for="button-3"]:hover .inner-control {
+  border-color: rgb(177, 216, 214);
+}
+
+#button-4:checked ~ .control-panel label[for="button-4"]:hover .inner-control {
+  border-color: rgb(177, 216, 214);
+}
+
+/* styles for slider animation */
+
+#button-1:checked ~ .slider .slides .slide-1 {
+  margin-left: 0;
+}
+
+#button-2:checked ~ .slider .slides .slide-1 {
+  margin-left: -25%;
+}
+
+#button-3:checked ~ .slider .slides .slide-1 {
+  margin-left: -50%;
+}
+
+#button-4:checked ~ .slider .slides .slide-1 {
+  margin-left: -75%;
+}
+
+#button-1:checked ~ .caption-container .caption {
+  transform: translateX(0);
+}
+
+#button-2:checked ~ .caption-container .caption {
+  transform: translateX(-25%);
+}
+
+#button-3:checked ~ .caption-container .caption {
+  transform: translateX(-50%);
+}
+
+#button-4:checked ~ .caption-container .caption {
+  transform: translateX(-75%);
+}
+
+/* footer */
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer .container {
+  justify-content: space-between;
+}
+
+.footer-git {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 20%;
+}
+
+.year,
+.github {
+  display: flex;
+  align-items: center;
+}
+
+.github {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.year {
+  flex-basis: 30%;
+}
+
+.rs {
+  display: flex;
+  justify-content: end;
+  flex-basis: 20%;
+  align-items: center;
+}
+
+.logo {
+  height: 80%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Media queries */
+@media (min-width: 320px) and (max-width: 425px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  .container {
+    padding: 0 3%;
+    flex-basis: 99%;
+    max-width: 99%;
+  }
+
+  .header .container {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1%;
+  }
+
+  .header,
+  .footer {
+    height: 15%;
+  }
+
+  .main {
+    height: calc(100vh - 30%);
+  }
+
+  .disclaimer {
+    text-align: center;
+  }
+
+  .main .container {
+    grid-template-rows: 5% 1fr 10% 20%;
+  }
+
+  .slider {
+    grid-column: 1 / 13;
+  }
+
+  .caption-container {
+    grid-column: 1 / 13;
+    grid-row: 4 / 5;
+  }
+
+  .control-panel {
+    grid-column: 4 / 10;
+    grid-row: 3 / 4;
+  }
+
+  .control {
+    height: 55.6%;
+  }
+
+  .slide-caption {
+    padding-left: 0;
+    font-size: 1.1rem;
+  }
+
+  .footer .container {
+    height: 100%;
+  }
+
+  .footer-git {
+    flex-basis: 61%;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .container {
+    padding: 0 3%;
+    flex-basis: 99%;
+    max-width: 99%;
+  }
+
+  .header .container {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1%;
+  }
+
+  .header,
+  .footer {
+    height: 15%;
+  }
+
+  .main {
+    height: calc(100vh - 30%);
+  }
+
+  .disclaimer {
+    text-align: center;
+  }
+
+  .main .container {
+    grid-template-rows: 5% 1fr 10% 20%;
+  }
+
+  .slider {
+    grid-column: 3 / 11;
+  }
+
+  .caption-container {
+    grid-column: 3 / 11;
+    grid-row: 4 / 5;
+  }
+
+  .control-panel {
+    grid-column: 5 / 9;
+    grid-row: 3 / 4;
+  }
+
+  .control {
+    height: 55.6%;
+  }
+
+  .slide-caption {
+    padding-left: 0;
+    font-size: 1.1rem;
+  }
+
+  .footer .container {
+    height: 100%;
+  }
+
+  .footer-git {
+    flex-basis: 61%;
+  }
+}
